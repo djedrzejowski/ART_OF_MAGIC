@@ -352,3 +352,24 @@ ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
     description=_ "When a unit is hit with the ether grip weapon special, it will receive +20% damage until the end of the turn."
 [/ethergrip]
 #enddef
+[event]
+    name=prerecruit
+    first_time_only=no
+    [filter]
+        type=Dwarvish Fighter
+    [/filter]
+    
+    [object]
+        silent=yes
+        
+        
+        [effect]
+            [filter]
+                type=Dwarvish Fighter # This is important
+            [/filter]
+            apply_to=new_advancement
+            replace=no
+            types=Dwarvish Runesmith
+        [/effect]
+    [/object]
+[/event]
